@@ -17,7 +17,7 @@ public class LäxaVecka37 {
 		System.out.println("Vad är din adress?");
 		String Adress = input.nextLine();
 		
-		System.out.println("Vad är din postnummer?");
+		System.out.println("Vad är ditt postnummer?");
 		String Postnummer = input.nextLine();
 		
 		System.out.println("Vilken stad bor du i?");
@@ -26,6 +26,8 @@ public class LäxaVecka37 {
 		System.out.println("Vad är ditt telefonnummer?");
 		String Mobilnummer = input.nextLine();
 		
+		System.out.println( "Information" + "\n" + "Namn:" + "\t" +"\t" + Namn + "\n" + "Ålder:" + "\t" + "\t" + Ålder + "\n" + "Adress:" + "\t" + "\t" + Adress + "\n" + "Postnummer:" + "\t" + Postnummer + "\n" + "Stad:" + "\t" + "\t" + Stad +"\n" + "Nummer:" + "\t" + "\t" + Mobilnummer);
+		
 	}
-
+ 
 }
