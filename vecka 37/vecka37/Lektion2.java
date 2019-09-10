@@ -23,7 +23,7 @@ public class Lektion2 {
 		
 		String namn5 = input.nextLine();
 		
-		System.out.println("\nNAMN;");//print skriver på samma rad, println skriver på nästa rad
+		System.out.println("\nNAMN:");//print skriver på samma rad, println skriver på nästa rad
 		System.out.println("\t" + namn1 + "\n" + "\t" + namn2 + "\n" + "\t" + namn3 + "\n" + "\t" + namn4 + "\n" + "\t" + namn5);
 }
 
