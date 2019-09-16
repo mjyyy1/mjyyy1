@@ -26,8 +26,8 @@ public class LäxaVecka37 {
 		System.out.println("Vad är ditt telefonnummer?");
 		String Mobilnummer = input.nextLine();
 		
-		System.out.println( "Information:" + "\n" + "Namn:" +"\t" + Namn + "\n" + "Ålder:" + "\t" + Ålder + "\n" + "Adress:" + "\t" + Adress + "\n" + "\t" + Postnummer + " " + Stad +"\n" + "Nummer:" + "\t" + Mobilnummer);
+		System.out.println( "Information:" + "\n" + "Namn:" +"\t" + Namn + "\n" + "Ålder:" + "\t" + Ålder + " år" + "\n" + "Adress:" + "\t" + Adress + "\n" + "\t" + Postnummer + " " + Stad +"\n" + "Nummer:" + "\t" + Mobilnummer);
 		
 	}
- 
+  
 }
