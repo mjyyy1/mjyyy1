@@ -7,12 +7,12 @@ public class LäxaV38 {
 	public static void main(String[] args) {
 
 		Scanner input = new Scanner(System.in);
-		int tal1 = 0;
-		int tal2 = 0;
-		int tal3 = 0;
-		int tal4 = 0;
-		int tal5 = 0;
-		int dela = 5;
+		double tal1 = 0;
+		double tal2 = 0;
+		double tal3 = 0;
+		double tal4 = 0;
+		double tal5 = 0;
+		double dela = 5;
 
 		System.out.println("Skriv 5 heltal:");
 		tal1 = input.nextInt();
