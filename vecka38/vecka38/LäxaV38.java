@@ -23,38 +23,40 @@ public class LäxaV38 {
 		double medel = (tal1 + tal2 + tal3 + tal4 + tal5) / dela;// räknar ut medelvärdet
 
 		if (tal1 >= tal2 && tal1 >= tal3 && tal1 >= tal4 && tal1 >= tal5) {
-			System.out.println(tal1);
+			
+			System.out.println("Störst:" + "\t" + tal1);
 		}
 		else if (tal2 >= tal1 && tal2 >= tal3 && tal2 >= tal4 && tal2 >= tal5) {
-			System.out.println(tal2);
+			System.out.println("Störst:" + "\t" + tal2);
 		}
 		
 		else if (tal3 >= tal1 && tal3 >= tal2 && tal3 >= tal4 && tal3 >= tal5) {
-			System.out.println(tal3);			
+			System.out.println("Störst:" + "\t" + tal3);			
 		}
 		else if (tal4 >= tal1 && tal4 >= tal3 && tal4 >= tal3 && tal4 >= tal5) {
-			System.out.println(tal4);
+			System.out.println("Störst:" + "\t" + tal4);
 		}
 		else if (tal5 >= tal1 && tal5 >= tal3 && tal5 >= tal3 && tal5 >= tal4) {
-			System.out.println(tal5);
+			System.out.println("Störst:" + "\t" + tal5);
 		};
 		
 		
 		if  (tal1 <= tal2 && tal1 <= tal3 && tal1 <= tal4 && tal1 <= tal5) {
-			System.out.println(tal1);
+			System.out.println("Minst:" + "\t" + tal1);
 		}
 		else if (tal2 <= tal1 && tal2 <= tal3 && tal2 <= tal4 && tal2 <= tal5) {
-			System.out.println(tal2);
+			System.out.println("Minst:" + "\t" + tal2);
 		}
 		else if (tal3 <= tal1 && tal3 <= tal2 && tal3 <= tal4 && tal3 <= tal5) {
-			System.out.println(tal3);
+			System.out.println("Minst:" + "\t" + tal3);
 			}
 		else if (tal4 <= tal1 && tal4 <= tal3 && tal4 <= tal2 && tal4 <= tal5) {
-			System.out.println(tal4);
+			System.out.println("Minst:" + "\t" + tal4);
 			}
 		else if (tal5 <= tal1 && tal5 <= tal3 && tal5 <= tal4 && tal5 <= tal2) {
-			System.out.println(tal2);
+			System.out.println("Minst:" + "\t" + tal5);
 			}
+		System.out.println("medelvärde :" + medel);
 	}
     
 }
