@@ -29,5 +29,5 @@ public class LäxaVecka37 {
 		System.out.println( "Information:" + "\n" + "Namn:" +"\t" + Namn + "\n" + "Ålder:" + "\t" + Ålder + " år" + "\n" + "Adress:" + "\t" + Adress + "\n" + "\t" + Postnummer + " " + Stad +"\n" + "Nummer:" + "\t" + Mobilnummer);
 		
 	}
-  
+
 }
