@@ -30,17 +30,31 @@ public class LäxaV38 {
 		}
 		
 		else if (tal3 >= tal1 && tal3 >= tal2 && tal3 >= tal4 && tal3 >= tal5) {
-			System.out.println(tal3);
-			
+			System.out.println(tal3);			
 		}
 		else if (tal4 >= tal1 && tal4 >= tal3 && tal4 >= tal3 && tal4 >= tal5) {
 			System.out.println(tal4);
 		}
 		else if (tal5 >= tal1 && tal5 >= tal3 && tal5 >= tal3 && tal5 >= tal4) {
-			System.out.println(tal4);
-		}
+			System.out.println(tal5);
+		};
 		
-	
+		
+		if  (tal1 <= tal2 && tal1 <= tal3 && tal1 <= tal4 && tal1 <= tal5) {
+			System.out.println(tal1);
+		}
+		else if (tal2 <= tal1 && tal2 <= tal3 && tal2 <= tal4 && tal2 <= tal5) {
+			System.out.println(tal2);
+		}
+		else if (tal3 <= tal1 && tal3 <= tal2 && tal3 <= tal4 && tal3 <= tal5) {
+			System.out.println(tal3);
+			}
+		else if (tal4 <= tal1 && tal4 <= tal3 && tal4 <= tal2 && tal4 <= tal5) {
+			System.out.println(tal4);
+			}
+		else if (tal5 <= tal1 && tal5 <= tal3 && tal5 <= tal4 && tal5 <= tal2) {
+			System.out.println(tal2);
+			}
 	}
-
+    
 }
