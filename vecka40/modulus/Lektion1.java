@@ -19,6 +19,7 @@ public class Lektion1 {
 		}
 		
 		
+		
 		}
 		System.out.println("summan av alla tal delbart med 3: " + sum);
 	}

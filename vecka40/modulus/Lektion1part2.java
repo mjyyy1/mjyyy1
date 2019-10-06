@@ -4,7 +4,7 @@ public class Lektion1part2 {
 
 	public static void main(String[] args) {
 		int turn = 0;
-		while(true) {
+		while(true) {//skriver ut vems tur det är tills att det blir turn 100 där en break skippar loopen.
 			
 			turn ++;
 			
