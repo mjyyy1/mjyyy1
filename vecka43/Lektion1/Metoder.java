@@ -19,7 +19,7 @@ public class Metoder {
 		int tal1 = input.nextInt();
 		int tal2 = input.nextInt();
 
-		System.out.println(minstaTal(tal1, tal2));
+		System.out.println(minstaTal(tal1, tal2)); 
 
 	}
 

@@ -5,9 +5,13 @@ import java.util.Scanner;
 public class Homework5 {
 
 	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
 		LOL();
 		TwoNumbers();
 		intN();
+		System.out.println(KtoC(3));
+		System.out.println(FtoC(3));
+		Age();
 	}
 
 	/**
@@ -49,15 +53,47 @@ public class Homework5 {
 	
 	public static void intN() {
 		Scanner input = new Scanner(System.in);
-		int i = 1;
 		int n = input.nextInt();
+		count(n);
 		
 	}
 	
-	
-	public static int count(int n, int i) {
-		while (i<=n)
-		return i;
+	public static void count(int n) {
+		 for(int i = 1; i <= n; i++) {	 
+			 System.out.println(i);
+		 }
 	}
-	
+		 
+	public static double KtoC(double kelvin) {
+	Scanner input = new Scanner (System.in);
+	double celsius = kelvin + 273.15;
+	return celsius;
+	}
+	public static double FtoC(double Far) {
+		Scanner input = new Scanner (System.in);
+		double celsius = Far*1.8 + 32;
+		return celsius;
+		}
+	public static void Age() {
+
+		Scanner input = new Scanner(System.in);
+		System.out.println("hur gammal är du?");
+		 int age = input.nextInt();
+
+		if (age <= 4) {System.out.println("va gör du ens här");} 
+		else if (age >= 5){System.out.println("småbarn får inte göra något");}
+		else if (age >= 6 && age <=12) {System.out.println("du får spela minecraft");}
+		else if (age < 13 && age <= 14) {System.out.println("du är en tonåring");}
+		else if (age >= 15 && age <= 17) {System.out.println("du får köra moppe");}
+		else if (age >= 18 && age <= 20) {System.out.println("du får köra bil");}
+		else if (age >= 21 && age <= 64) {System.out.println("du får vuxenstraff");}
+		else if (age >= 65 && age <= 99) {System.out.println("du e pensionär");}
+		else if (age >= 100) {System.out.println("u ded yet");}
+		}
+	public static void trappa() {
+		
+	}
 }
+
+
+
