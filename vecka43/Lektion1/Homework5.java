@@ -124,7 +124,6 @@ public class Homework5 {
 			}
 			System.out.println("");
 			
-				
 			
 		}
 	}
