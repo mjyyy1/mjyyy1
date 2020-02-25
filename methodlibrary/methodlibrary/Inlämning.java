@@ -19,7 +19,6 @@ public class Inlämning {
 		vol();
 		sidor();
 		diameter();
-		jlno
 	}
 
 	/**
