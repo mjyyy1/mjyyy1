@@ -28,7 +28,7 @@ public class Talspel {
 			System.out.println("skriv 1 för normal eller 2 för hard ");
 			choice = input.next();
 			if (choice.equals("1")) {
-				System.out.println("du har 10 försök");
+				System.out.println("du har 10 försök att gissa talet mellan 1 och 100");
 				diff = 10;
 				Game(loop, diff);
 				System.out.println("Skriv 1 för att köra om 2 för att avsluta");
@@ -45,7 +45,7 @@ public class Talspel {
 				} while (stop=true);
 
 			} else if (choice.equals("2")) {
-				System.out.println("du har 5 försök");
+				System.out.println("du har 5 försök att gissa talet mellan 1 och 100");
 				diff = 5;
 				Game(loop, diff);
 				System.out.println("Skriv 1 för att köra om 2 för att avsluta");
@@ -83,8 +83,8 @@ public class Talspel {
 
 			do {
 				gissa = input.next();
-				isAnummer(gissa);
-				if (isAnummer(gissa)) {
+				isAnummber(gissa);
+				if (isAnummber(gissa)) {
 					guess = Integer.parseInt(gissa);
 					break;
 				} else {
@@ -121,7 +121,7 @@ public class Talspel {
 	 * @param gissa
 	 * @return
 	 */
-	public static boolean isAnummer(String gissa) {
+	public static boolean isAnummber(String gissa) {
 		if (gissa == null) {// om gissa inte har något värde returnas false
 			return false;
 		}
