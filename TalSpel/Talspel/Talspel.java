@@ -18,6 +18,7 @@ public class Talspel {
 		Scanner input = new Scanner(System.in);
 		String val;
 		boolean loop = true;
+		boolean stop = true;
 
 		int diff;
 		String choice;
@@ -31,28 +32,35 @@ public class Talspel {
 				diff = 10;
 				Game(loop, diff);
 				System.out.println("Skriv 1 för att köra om 2 för att avsluta");
+				do {
 
-				val = input.next();
-
-				if (val.equals("1")) {
-				} else if (val.equals("2")) {
-					loop = false;
-				} else {
-					System.out.println("Skriv 1 för att köra om 2 för att avsluta");
-				}
+					val = input.next();
+					if (val.equals("1")) {break;
+					} else if (val.equals("2")) {
+						loop = false;
+						break;
+					} else {
+						System.out.println("Skriv 1 för att köra om 2 för att avsluta");
+					}
+				} while (stop=true);
 
 			} else if (choice.equals("2")) {
 				System.out.println("du har 5 försök");
 				diff = 5;
 				Game(loop, diff);
 				System.out.println("Skriv 1 för att köra om 2 för att avsluta");
+				do {
+					
+				
 				val = input.next();
-				if (val.equals("1")) {
+				if (val.equals("1")) {break;
 				} else if (val.equals("2")) {
 					loop = false;
+					break;
 				} else {
 					System.out.println("Skriv 1 för att köra om 2 för att avsluta");
-				}
+				}}
+				 while (stop = true);
 			} else {
 				System.out.println("Skriv 1 eller 2");
 			}
@@ -72,20 +80,18 @@ public class Talspel {
 		do {
 			System.out.println("Gissa nummret");
 			System.out.println("du har " + i + " försök kvar" + '\n');
-			
+
 			do {
 				gissa = input.next();
-				isnummer(gissa);
-				if (isnummer(gissa)) {
+				isAnummer(gissa);
+				if (isAnummer(gissa)) {
 					guess = Integer.parseInt(gissa);
 					break;
 				} else {
 					System.out.println("Skriv en siffra");
 				}
-				
-			}while (success=true);
 
-			
+			} while (success = true);
 
 			i--;
 			j++;
@@ -107,24 +113,28 @@ public class Talspel {
 		} while (loop == true);
 
 	}
-/**
- * kollar om gissa inte innehåller några bokstäver och skickar tillbaka en true om den inte har bokstäver eller false om den har bokstäver
- * @param gissa
- * @return
- */
-	public static boolean isnummer(String gissa) {
-		if (gissa == null) {
+
+	/**
+	 * kollar om gissa inte innehåller några bokstäver och skickar tillbaka en true
+	 * om den inte har bokstäver eller false om den har bokstäver
+	 * 
+	 * @param gissa
+	 * @return
+	 */
+	public static boolean isAnummer(String gissa) {
+		if (gissa == null) {// om gissa inte har något värde returnas false
 			return false;
 		}
-		int glength = gissa.length();
-		for (int i = 0; i < glength; i++) {//en loop som går igenom varje tecken i Stringen gissa
-			if (Character.isDigit(gissa.charAt(i)) == false) {//isDigit kollar om char är en siffra eller annat tecken
-
+		int glength = gissa.length();// skapar en int som är = längden på Stringen gissa som sedan används för att
+										// kolla igenom varje bokstav i loopen nedan
+		for (int i = 0; i < glength; i++) {// en loop som går igenom varje tecken i Stringen gissa
+			if (Character.isDigit(gissa.charAt(i)) == false) {// isDigit kollar om char är en siffra eller annat tecken
+																// och .charAt(i) specificerar vilken char den är på;
 				return false;
 			}
 		}
 
-		return true;
+		return true;// annars returnas true
 
 	}
 }
