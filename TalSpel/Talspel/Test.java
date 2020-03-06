@@ -1,31 +1,17 @@
 package Talspel;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Test {
 
 	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
-		
-		String str = input.next();
-		int result;
-		//is_numeric
-		isNumeric(str);
-	
-	}
-	public static boolean isNumeric(String str) {
-	    if (str == null) {
-	        return false;
-	    }
-	    int sz = str.length();
-	    for (int i = 0; i < sz; i++) {
-	        if (Character.isDigit(str.charAt(i)) == false) {
-	        	System.out.println("false");
-	            return false;
-	        }
-	    }
-	    System.out.println("true");
-	    return true;
-	    
+		Scanner keyboard = new Scanner(System.in);
+		String text = keyboard.nextLine();
+		if (text.matches("[0-9]+")) {//kollar om Stringen innehåller bara siffror mellan 0 och 9 och minst 1 siffra
+			int i = (int)Long.parseLong(text);
+			System.out.println(i);
+		}
+		else {System.out.println("nono");}
 	}
 }

@@ -1,6 +1,7 @@
 package Talspel;
 
 import java.util.Scanner;
+import java.util.Random;
 
 public class Talspel {
 
@@ -17,78 +18,80 @@ public class Talspel {
 	private static void difficulty() {
 		Scanner input = new Scanner(System.in);
 		String val;
-		boolean loop = true;
-		boolean stop = true;
 
+		boolean stop = true;
+		boolean loop = true;
 		int diff;
 		String choice;
-
+		
 		while (loop == true) {
-			System.out.println("välj svårighetsgrad");
-			System.out.println("skriv 1 för normal eller 2 för hard ");
-			choice = input.next();
+			System.out.println("Skriv 1 för normal(10 gissningar),2 för hard(5 gissningar) eller 3 för eget antall gissningar");
+			choice = input.nextLine();
 			if (choice.equals("1")) {
-				System.out.println("du har 10 försök att gissa talet mellan 1 och 100");
+
 				diff = 10;
 				Game(loop, diff);
-				System.out.println("Skriv 1 för att köra om 2 för att avsluta");
-				do {
-
-					val = input.next();
-					if (val.equals("1")) {break;
-					} else if (val.equals("2")) {
-						loop = false;
-						break;
-					} else {
-						System.out.println("Skriv 1 för att köra om 2 för att avsluta");
-					}
-				} while (stop=true);
+				END();
 
 			} else if (choice.equals("2")) {
-				System.out.println("du har 5 försök att gissa talet mellan 1 och 100");
 				diff = 5;
 				Game(loop, diff);
-				System.out.println("Skriv 1 för att köra om 2 för att avsluta");
-				do {
-					
-				
-				val = input.next();
-				if (val.equals("1")) {break;
-				} else if (val.equals("2")) {
-					loop = false;
-					break;
-				} else {
-					System.out.println("Skriv 1 för att köra om 2 för att avsluta");
-				}}
-				 while (stop = true);
-			} else {
-				System.out.println("Skriv 1 eller 2");
+				END();
+			}
+
+			else if (choice.equals("3")) {
+				diff = Antal();
+				Game(loop, diff);
+				END();
 			}
 
 		}
-		System.out.println("thanks for playing <3");
+
+	}
+
+	private static int Antal() {
+		Scanner input = new Scanner(System.in);
+		String antalG;
+		boolean loop = false;
+		int test = 5;
+		System.out.println("skriv antal gissningar du vill ha");
+		while (!loop) {
+			antalG = input.nextLine();
+			if (antalG.matches("[0-9]+")) {// kollar om Stringen innehåller bara siffror mellan 0 och 9 och minst 1
+											// siffra(.matches kollar om gissa uppnår de kriterier som ges)
+				test = (int) Long.parseLong(antalG);// om gissa uppnår kriterierna så parsas Stringen och blir en int
+				break;
+			} else {
+				System.out.println("Skriv en siffra utan mellanslag");
+			}
+
+		}
+		return test;
+
 	}
 
 	private static void Game(boolean loop, int diff) {
 		Scanner input = new Scanner(System.in);
 		boolean success = true;
-		int random = (int) (Math.random() * (100) + 1);
+		int random = 100;
+		random = Random(random);
+		System.out.println("du ska gissa ett tal mellan 1 och 100");
+
 		String gissa;
 		int guess = 0;
 		int i = diff;
 		int j = 0;
 		do {
-			System.out.println("Gissa nummret");
+
 			System.out.println("du har " + i + " försök kvar" + '\n');
 
 			do {
-				gissa = input.next();
-				isAnummber(gissa);
-				if (isAnummber(gissa)) {
-					guess = Integer.parseInt(gissa);
+				gissa = input.nextLine();
+				if (gissa.matches("[0-9]+")) {
+					guess = (int) Long.parseLong(gissa);
 					break;
 				} else {
-					System.out.println("Skriv en siffra");
+					System.out.println("Skriv ett tal utan mellanslag och andra tecken");
 				}
 
 			} while (success = true);
@@ -114,27 +117,28 @@ public class Talspel {
 
 	}
 
-	/**
-	 * kollar om gissa inte innehåller några bokstäver och skickar tillbaka en true
-	 * om den inte har bokstäver eller false om den har bokstäver
-	 * 
-	 * @param gissa
-	 * @return
-	 */
-	public static boolean isAnummber(String gissa) {
-		if (gissa == null) {// om gissa inte har något värde returnas false
-			return false;
-		}
-		int glength = gissa.length();// skapar en int som är = längden på Stringen gissa som sedan används för att
-										// kolla igenom varje bokstav i loopen nedan
-		for (int i = 0; i < glength; i++) {// en loop som går igenom varje tecken i Stringen gissa
-			if (Character.isDigit(gissa.charAt(i)) == false) {// isDigit kollar om char är en siffra eller annat tecken
-																// och .charAt(i) specificerar vilken char den är på;
-				return false;
-			}
-		}
+	private static int Random(int random) {
+		Random r = new Random();
+		return r.nextInt(random);
+	}
 
-		return true;// annars returnas true
+	private static void END() {
+		Scanner input = new Scanner(System.in);
+		String val;
+
+		boolean stop = true;
+		do {
+			System.out.println("Skriv 1 för att köra om 2 för att avsluta");
+			val = input.nextLine();
+			if (val.equals("1")) {
+				break;
+			} else if (val.equals("2")) {
+				System.out.println("thanks for playing <3");
+
+				System.exit(0);
+				break;
+			}
+		} while (stop = true);
 
 	}
 }
