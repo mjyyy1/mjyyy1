@@ -18,14 +18,13 @@ public class Talspel {
 	private static void difficulty() {
 		Scanner input = new Scanner(System.in);
 		String val;
-
 		boolean stop = true;
 		boolean loop = true;
 		int diff;
 		String choice;
 		
 		while (loop == true) {
-			System.out.println("Skriv 1 för normal(10 gissningar),2 för hard(5 gissningar) eller 3 för eget antall gissningar");
+			System.out.println("Skriv 1 för normal(10 gissningar),2 för hard(5 gissningar) eller 3 för eget antall gissningar");//en meny där du väljer svårighetsgrad
 			choice = input.nextLine();
 			if (choice.equals("1")) {
 
@@ -48,7 +47,10 @@ public class Talspel {
 		}
 
 	}
-
+/**
+ * en metod som låter dig skriva in ett antal gissningar som du vill ha och skickar tillbaka
+ * @return
+ */
 	private static int Antal() {
 		Scanner input = new Scanner(System.in);
 		String antalG;
@@ -69,12 +71,16 @@ public class Talspel {
 		return test;
 
 	}
-
+/**
+ * dethär är huvuddelen av spelet där personen gissar talet
+ * @param loop
+ * @param diff
+ */
 	private static void Game(boolean loop, int diff) {
 		Scanner input = new Scanner(System.in);
 		boolean success = true;
 		int random = 100;
-		random = Random(random);
+		random = Random(random);//kallar på metoden som skapar ett random tal
 		System.out.println("du ska gissa ett tal mellan 1 och 100");
 
 		String gissa;
@@ -87,7 +93,7 @@ public class Talspel {
 
 			do {
 				gissa = input.nextLine();
-				if (gissa.matches("[0-9]+")) {
+				if (gissa.matches("[0-9]+")) {//kollar om gissa innehåller bara siffror och minst ett tecken
 					guess = (int) Long.parseLong(gissa);
 					break;
 				} else {
@@ -116,12 +122,18 @@ public class Talspel {
 		} while (loop == true);
 
 	}
-
+/**
+ * den här metoden skapar ett slumpat tal
+ * @param random
+ * @return
+ */
 	private static int Random(int random) {
-		Random r = new Random();
+		Random r = new Random();//Random är en java metod som skapar randomiser
 		return r.nextInt(random);
 	}
-
+/**
+ * denhär metoden stänger av programet helt
+ */
 	private static void END() {
 		Scanner input = new Scanner(System.in);
 		String val;
@@ -135,7 +147,7 @@ public class Talspel {
 			} else if (val.equals("2")) {
 				System.out.println("thanks for playing <3");
 
-				System.exit(0);
+				System.exit(0);//system exit stänger av programmet helt
 				break;
 			}
 		} while (stop = true);
