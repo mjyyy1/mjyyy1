@@ -11,6 +11,7 @@ public class HangMan {
 		int r;
 		boolean spel = true;
 		do {
+			
 			r = 30;
 			RandomOrd(r);
 			r = RandomOrd(r);
@@ -97,7 +98,7 @@ public class HangMan {
 						}
 						index = sb.indexOf(guess, index + 1);
 						if (!HiddenWord.toString().contains("-")) {// kollar om hiddenword inte innehåller några -
-																	// /kollar
+																	// /kollar  
 																	// om ordet är rätt gissat
 							System.out.println("Congratulations you won");
 							Pagain(HiddenWord, gissning);
