@@ -29,7 +29,10 @@ public class HangMan {
 		Random RanInd = new Random();
 		return RanInd.nextInt(r);
 	}
-
+/**
+ * Här finns alla orden och gör då om Ord till ett av orden som man ska gissa.
+ * @param r
+ */
 	public static void Ord(int r) {
 
 		ArrayList<String> WordList = new ArrayList<String>();
@@ -42,11 +45,14 @@ public class HangMan {
 		for (int i = 0; i < Words.length; i++) {
 			WordList.add(Words[i]);
 		}
-		String WordToGuess = WordList.get(r);
-		String Ord = WordToGuess;
+		
+		String Ord = WordList.get(r);
 		Guess(Ord);
 	}
-
+	/**
+	 * här gissar spelaren och gissningen kollas så att den når alla kriterier
+	 * @param Ord
+	 */
 	public static void Guess(String Ord) {
 		ArrayList<String> GuessedChar = new ArrayList<String>();// denhär arraylisten sparar bokstäverna som du gissar
 																// på
@@ -86,10 +92,10 @@ public class HangMan {
 
 				String guess = Character.toString(Guess);
 				int index = sb.indexOf(guess);
-				if (GuessedChar.contains(guess)) {
+				if (GuessedChar.contains(guess)) {//kollar om det du gissa finns i arraylisten med bokstäver du har gissat och om den gör det så får man gissa om annars går den vidare till nästa
 					System.out.println("guess something you have not guessed before");
 
-				} else if (sb.toString().contains(guess)) {
+				} else if (sb.toString().contains(guess)) {//här kollar den om det du gissar finns i ordet och om det gör det så fixar den så att du kan se vilka du har i ordet
 
 					while (index >= 0) {
 
@@ -108,7 +114,7 @@ public class HangMan {
 						}
 
 					}
-				} else if (!sb.toString().contains(guess)) {
+				} else if (!sb.toString().contains(guess)) {//här målas gubben upp om ordet inte innehåller bokstaven du gissat och drar ner antalet gissningar du har
 					Gkvar--;
 					if (Gkvar == 6) {
 						System.out.println("  +---+\r\n" + "  |   |\r\n" + "      |\r\n" + "      |\r\n" + "      |\r\n"
