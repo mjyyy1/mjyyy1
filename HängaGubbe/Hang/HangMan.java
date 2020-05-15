@@ -148,33 +148,7 @@ public class HangMan {
 					}
 				} else if (!sb.toString().contains(guess)) {//här målas gubben upp om ordet inte innehåller bokstaven du gissat och drar ner antalet gissningar du har
 					Gkvar--;
-					if (Gkvar == 6) {
-						System.out.println("  +---+\r\n" + "  |   |\r\n" + "      |\r\n" + "      |\r\n" + "      |\r\n"
-								+ "      |\r\n" + "=========");
-					} else if (Gkvar == 5) {
-						System.out.println("  +---+\r\n" + "  |   |\r\n" + "  O   |\r\n" + "      |\r\n" + "      |\r\n"
-								+ "      |\r\n" + "=========");
-					} else if (Gkvar == 4) {
-						System.out.println("  +---+\r\n" + "  |   |\r\n" + "  O   |\r\n" + "  |   |\r\n" + "      |\r\n"
-								+ "      |\r\n" + "=========");
-					} else if (Gkvar == 3) {
-						System.out.println("  +---+\r\n" + "  |   |\r\n" + "  O   |\r\n" + " /|   |\r\n" + "      |\r\n"
-								+ "      |\r\n" + "=========");
-					} else if (Gkvar == 2) {
-						System.out.println("  +---+\r\n" + "  |   |\r\n" + "  O   |\r\n" + " /|\\  |\r\n"
-								+ "      |\r\n" + "      |\r\n" + "=========");
-					} else if (Gkvar == 1) {
-						System.out.println("  +---+\r\n" + "  |   |\r\n" + "  O   |\r\n" + " /|\\  |\r\n"
-								+ " /    |\r\n" + "      |\r\n" + "=========");
-					} else if (Gkvar == 0) {
-						System.out.println("  +---+\r\n" + "  |   |\r\n" + "  O   |\r\n" + " /|\\  |\r\n"
-								+ " / \\  |\r\n" + "      |\r\n" + "=========");
-						HiddenWord = sb;
-						System.out.println("Game over you lost");
-						Pagain(HiddenWord, gissning);
-						gissning = false;
-
-					}
+					ascii(Gkvar,HiddenWord,sb,gissning);
 
 				}
 				if (!GuessedChar.contains(guess)) {
@@ -191,6 +165,39 @@ public class HangMan {
 
 	}
 
+	public static boolean ascii(int Gkvar,StringBuffer HiddenWord,StringBuffer sb,boolean gissning) {
+		
+		if (Gkvar == 6) {
+			System.out.println("  +---+\r\n" + "  |   |\r\n" + "      |\r\n" + "      |\r\n" + "      |\r\n"
+					+ "      |\r\n" + "=========");
+		} else if (Gkvar == 5) {
+			System.out.println("  +---+\r\n" + "  |   |\r\n" + "  O   |\r\n" + "      |\r\n" + "      |\r\n"
+					+ "      |\r\n" + "=========");
+		} else if (Gkvar == 4) {
+			System.out.println("  +---+\r\n" + "  |   |\r\n" + "  O   |\r\n" + "  |   |\r\n" + "      |\r\n"
+					+ "      |\r\n" + "=========");
+		} else if (Gkvar == 3) {
+			System.out.println("  +---+\r\n" + "  |   |\r\n" + "  O   |\r\n" + " /|   |\r\n" + "      |\r\n"
+					+ "      |\r\n" + "=========");
+		} else if (Gkvar == 2) {
+			System.out.println("  +---+\r\n" + "  |   |\r\n" + "  O   |\r\n" + " /|\\  |\r\n"
+					+ "      |\r\n" + "      |\r\n" + "=========");
+		} else if (Gkvar == 1) {
+			System.out.println("  +---+\r\n" + "  |   |\r\n" + "  O   |\r\n" + " /|\\  |\r\n"
+					+ " /    |\r\n" + "      |\r\n" + "=========");
+		} else if (Gkvar == 0) {
+			System.out.println("  +---+\r\n" + "  |   |\r\n" + "  O   |\r\n" + " /|\\  |\r\n"
+					+ " / \\  |\r\n" + "      |\r\n" + "=========");
+			HiddenWord = sb;
+			System.out.println("Game over you lost");
+			Pagain(HiddenWord, gissning);
+			gissning = false;
+
+		}
+		return gissning;
+
+	}
+	
 	/**
 	 * i den här metoden väljer spelaren om den vill köra igen eller stänga av.
 	 * @param HiddenWord
