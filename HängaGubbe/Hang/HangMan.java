@@ -7,20 +7,47 @@ import java.util.Scanner;
 public class HangMan {
 
 	public static void main(String[] args) {
-		
+		Scanner input = new Scanner(System.in);
+		String oneortwo;
+		String pWord ="";
 		int r;
 		boolean spel = true;
 		do {
+			System.out.println("(1) 1 player");
+			System.out.println("(2) 2 players");
+			oneortwo = input.nextLine();
+			if (oneortwo.equals("1")||oneortwo.equals("2")) {
+				if (oneortwo.equals("1")) {
+					System.out.println("you chose one player");
+					r = 30;
+					RandomOrd(r);
+					r = RandomOrd(r);
+					Ord(r,oneortwo,pWord);
+				}
+				else {
+					System.out.println("you chose two players");
+					pWord = playerWord(pWord);
+					String Ord ="";
+					Guess(Ord,pWord,oneortwo);
+				}
+			}
+
 			
-			r = 30;
-			RandomOrd(r);
-			r = RandomOrd(r);
-			Ord(r);
 		} while (spel);
 
 	}
+	
+	public static String playerWord(String pWord) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("player 1 type a word");
+		pWord = input.nextLine();
+		return pWord;
+		
+	}
+	
+	
 	/**
-	 * Denhär metoden skapar en random in som sedan används för att ta ett random index från ordlistan.
+	 * Denhär metoden skapar en random int som sedan används för att ta ett random index från ordlistan.
 	 * @param r
 	 * @return
 	 */
@@ -33,7 +60,7 @@ public class HangMan {
  * Här finns alla orden och gör då om Ord till ett av orden som man ska gissa.
  * @param r
  */
-	public static void Ord(int r) {
+	public static void Ord(int r,String oneortwo,String pWord) {
 
 		ArrayList<String> WordList = new ArrayList<String>();
 		String[] Words = { "geography", "cat", "yesterday", "java", "truck", "opportunity",
@@ -47,25 +74,28 @@ public class HangMan {
 		}
 		
 		String Ord = WordList.get(r);
-		Guess(Ord);
+		Guess(Ord,pWord,oneortwo);
 	}
 	/**
 	 * här gissar spelaren och gissningen kollas så att den når alla kriterier
 	 * @param Ord
 	 */
-	public static void Guess(String Ord) {
-		ArrayList<String> GuessedChar = new ArrayList<String>();// denhär arraylisten sparar bokstäverna som du gissar
-																// på
-		StringBuffer sb = new StringBuffer(Ord.toUpperCase());// StringBuffer funkar som en string fast man kan ändra på
-																// den till skillnad från en String som inte går att
-																// ändra på
-
+	public static void Guess(String Ord,String pWord ,String oneortwo) {
+		ArrayList<String> GuessedChar = new ArrayList<String>();// denhär arraylisten sparar bokstäverna som du gissar på
+		StringBuffer sb = new StringBuffer(Ord.toUpperCase());// StringBuffer funkar som en string fast man kan ändra på den till skillnad från en String som inte går att ändra på
+		System.out.println(oneortwo);
+		if (oneortwo.equals("2")) {
+			sb.append(pWord.toUpperCase());
+		}
+		
+		System.out.println(sb);
 		GuessedChar.removeAll(GuessedChar);
-
-		StringBuffer HiddenWord = new StringBuffer(Ord);
+		
+		StringBuffer HiddenWord = new StringBuffer(sb);
 		boolean ind = true;
 		boolean gissning = true;
-		for (int i = 0; i < Ord.length(); i++) {
+
+		for (int i = 0; i < sb.length(); i++) {
 			HiddenWord.setCharAt(i, '-');
 		}
 		Scanner input = new Scanner(System.in);
@@ -158,6 +188,11 @@ public class HangMan {
 		} while (gissning);
 
 	}
+	private static StringBuffer (String pWord) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	/**
 	 * i den här metoden väljer spelaren om den vill köra igen eller stänga av.
 	 * @param HiddenWord
