@@ -13,10 +13,11 @@ public class HangMan {
 		int r;
 		boolean spel = true;
 		do {
+			System.out.println("Hangman" + "\n");
 			System.out.println("(1) 1 player");
 			System.out.println("(2) 2 players");
 			oneortwo = input.nextLine();
-			if (oneortwo.equals("1")||oneortwo.equals("2")) {
+			if (oneortwo.equals("1")||oneortwo.equals("2")) {//kollar om det man har skrivit är 1 eller 2 annars får man skriva om
 				if (oneortwo.equals("1")) {
 					System.out.println("you chose one player");
 					r = 30;
@@ -36,7 +37,11 @@ public class HangMan {
 		} while (spel);
 
 	}
-	
+	/**
+	 * i denhär metoden skriver spelaren in sitt or som den andra ska gissa på
+	 * @param pWord
+	 * @return
+	 */
 	public static String playerWord(String pWord) {
 		Scanner input = new Scanner(System.in);
 		System.out.println("player 1 type a word");
@@ -83,12 +88,9 @@ public class HangMan {
 	public static void Guess(String Ord,String pWord ,String oneortwo) {
 		ArrayList<String> GuessedChar = new ArrayList<String>();// denhär arraylisten sparar bokstäverna som du gissar på
 		StringBuffer sb = new StringBuffer(Ord.toUpperCase());// StringBuffer funkar som en string fast man kan ändra på den till skillnad från en String som inte går att ändra på
-		System.out.println(oneortwo);
 		if (oneortwo.equals("2")) {
-			sb.append(pWord.toUpperCase());
+			sb.append(pWord.toUpperCase());//append gör om en String till en StringBuffer
 		}
-		
-		System.out.println(sb);
 		GuessedChar.removeAll(GuessedChar);
 		
 		StringBuffer HiddenWord = new StringBuffer(sb);
@@ -187,10 +189,6 @@ public class HangMan {
 			}
 		} while (gissning);
 
-	}
-	private static StringBuffer (String pWord) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	/**
