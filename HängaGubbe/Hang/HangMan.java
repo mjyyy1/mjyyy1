@@ -148,7 +148,7 @@ public class HangMan {
 					}
 				} else if (!sb.toString().contains(guess)) {//här målas gubben upp om ordet inte innehåller bokstaven du gissat och drar ner antalet gissningar du har
 					Gkvar--;
-					ascii(Gkvar,HiddenWord,sb,gissning);
+					ascii(Gkvar,HiddenWord,sb,gissning);               
 
 				}
 				if (!GuessedChar.contains(guess)) {
